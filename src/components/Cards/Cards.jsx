@@ -22,7 +22,7 @@ const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}})=>{
                         <CountUp start={0} end={confirmed.value} duration={3} separator=","/>
                     </Typography>
                     <Typography color="textSecondary">
-                        {new Date(Date.now()).toDateString()}
+                        {new Date(lastUpdate).toDateString()}
                     </Typography>
                     <Typography variant="body">
                         Number of active cases of COVID-19
@@ -38,7 +38,7 @@ const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}})=>{
                         <CountUp start={0} end={recovered.value} duration={3} separator=","/>
                     </Typography>
                     <Typography color="textSecondary">
-                        {new Date(Date.now()).toDateString()}
+                        {new Date(lastUpdate).toDateString()}
                     </Typography>
                     <Typography variant="body">
                         Number of recoveries cases of COVID-19
@@ -54,7 +54,7 @@ const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}})=>{
                         <CountUp start={0} end={deaths.value} duration={3} separator=","/>
                     </Typography>
                     <Typography color="textSecondary">
-                    {new Date(Date.now()).toDateString()}
+                    {new Date(lastUpdate).toDateString()}
                     </Typography>
                     <Typography variant="body">
                         Number of Death cases of COVID-19
