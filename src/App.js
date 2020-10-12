@@ -11,6 +11,7 @@ import covidImg from './assets/images/image.png';
 
 import {Cards,Chart,CountryPicker} from './components';
 import {fetchData} from './Api';
+import { Link, Typography } from '@material-ui/core';
 
 function App() {
 
@@ -34,11 +35,15 @@ function App() {
 
   return (
     <div className="container">
-
+      
       <img src={covidImg} alt="Covid19" className="image"></img>
      <Cards data={data}/>
      <CountryPicker handleCountryChange={handleCountryChange}/>
      <Chart data={data} country={country}/>
+
+     <Typography variant="subtitle1" style={{marginTop:'20px'}}>
+      Designed, Developed and Hosted by <Link href="https://www.linkedin.com/in/shaikh-ahmed-reza-3a2b4787/" target="_blank">Shaikh Ahmed Reza</Link>
+     </Typography>
     </div>
   );
 }
