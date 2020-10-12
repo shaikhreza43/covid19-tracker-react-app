@@ -7,12 +7,15 @@ import './App.css';
 
 //OR Alternative way to import
 
+import covidImg from './assets/images/image.png';
+
 import {Cards,Chart,CountryPicker} from './components';
 import {fetchData} from './Api';
 
 function App() {
 
   const [data,setData] = useState({});
+  const [country,setCountry] = useState('');
 
   useEffect(()=>{
     async function fetchCovidDataFromApi(){
@@ -23,11 +26,19 @@ function App() {
     fetchCovidDataFromApi();
   },[]);
 
+  const handleCountryChange = async (country)=>{
+    const fetchedData = await fetchData(country);
+    setData(fetchedData);
+    setCountry(country);
+  }
+
   return (
     <div className="container">
+
+      <img src={covidImg} alt="Covid19" className="image"></img>
      <Cards data={data}/>
-     <CountryPicker/>
-     <Chart/>
+     <CountryPicker handleCountryChange={handleCountryChange}/>
+     <Chart data={data} country={country}/>
     </div>
   );
 }
