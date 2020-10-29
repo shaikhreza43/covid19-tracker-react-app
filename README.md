@@ -1,3 +1,9 @@
+## Live Demo
+https://globe-covid-tracker.herokuapp.com/
+
+### Do check it out
+ ``` Do git clone and then npm install```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
